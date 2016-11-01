@@ -11,7 +11,6 @@ while choice != "3":
         bank_account = bank_account + amount
         print ("You now have " + str(bank_account) + " dollars in your bank account")
     elif choice == "3": #user chooses 'exit'
-        print ("Goodbye")
         
     print("1. Withdraw \n2. Deposit \n3. Exit")
     choice = input("Pick from above [1|2|3]:")
