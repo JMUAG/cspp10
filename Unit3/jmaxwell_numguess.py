@@ -11,5 +11,5 @@ while choice_of_answer != correct_random_number:
         print("Too high... 📛📛📛 Enter another number: ")
     elif choice_of_answer < correct_random_number:
         print("Too low... ⛔️⛔️⛔️ Enter another number: ")
-print ("You got the answer! It took you {} guesses to get the answer👍👍👌.\nYou are a MLG if you got it on the the first 3 tries😱😱😱. \nIf not then play it again untill you get it right...😡😡😡😡👿".format(number_of_tries))
+print ("You got the answer! It took you {} guesses to get the answer👍👍👌.\nYou are a MLG if you got it on the the first 3 tries😱😱😱. \nIf not then play it again until you get it right...😡😡😡😡👿".format(number_of_tries))
 
