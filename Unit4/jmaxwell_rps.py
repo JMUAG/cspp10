@@ -5,12 +5,12 @@ import random
 #   purpose: present player with options, use input() to get player move
 #   returns: the player's move as either 'r', 'p', or 's'
 def get_p1_move():
-    x = input("1 = rock\n2 = paper\n3 = scissors\nEnter a Number from 1-3: ")
-    if x == 1:
+    x = input("1 = Rock\n2 = Paper\n3 = Scissors\nEnter a Number from 1-3: ")
+    if x == "1":
         return 'r'
-    elif x == 2:
+    elif x == "2":
         return 'p'
-    elif x == 3:
+    elif x == "3":
         return 's'
 
 #function name: get_comp_move():
@@ -84,19 +84,38 @@ def get_full_move(shortmove):
 #   arguments: player score, computer score, number of ties
 #   purpose: prints the scoreboard
 #   returns: none
-def print_score(pscore, cscore, ties):
-    print ("You have {} points \nThe computer has {} points\n You guys tied {} times.".format(pscore,cscore,ties))
+def print_score(pscore, cscore, tie):
+    print ("You have {} points \nThe computer has {} points\nYou guys tied {} times.".format(pscore,cscore, tie))
 
-#function name: rps
+# function name: rps
 #   arguments: none
 #   purpose: the main game loop.  This should be the longest, using
 #               all the other functions to create RPS
-#   returns: none
+# #   returns: none
+# def score():
+#     player_score = 0
+#     comp_score = 0
+#     if get_round_winner() == "player":
+#         player_score = player_score + 1
+#     elif get_round_winner() return "comp":
+#         comp_score = comp_score + 1
+#     else:
+#         return "tie"
+
 def rps():
+    player_score = 0
+    comp_score = 0
+    ties = 0
     rounds = get_rounds()
     player_1 = get_p1_move()
     computer_1 = get_comp_move()
-    winner = get_round_winner(player_1,computer_1,)
-    score = print_score(player_1, computer_1, )
-
+    winner = get_round_winner(player_1,computer_1)
+    print(winner)
+    if winner == "player":
+        player_score = player_score + 1
+    elif winner == "comp":
+        comp_score = comp_score + 1
+    elif winner == "tie":
+        ties = ties + 1
+    print_score(player_score, comp_score, ties)
 rps()
