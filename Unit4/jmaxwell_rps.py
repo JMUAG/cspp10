@@ -44,23 +44,23 @@ def get_rounds():
 #               "tie" if it's a tie
 def get_round_winner(p1move, cmove):
     if p1move == 'r' and cmove == 's':
-       return "player"
+       return "Player"
     elif p1move == 'p' and cmove == 'r':
-        return "player"
+        return "Player"
     elif p1move == 's' and cmove == 'p':
-        return "player"
+        return "Player"
     elif p1move == 's' and cmove == 'r':
-       return "comp"
+       return "Comp"
     elif p1move == 'r' and cmove == 'p':
-        return "comp"
+        return "Comp"
     elif p1move == 'p' and cmove == 's':
-        return "comp"
+        return "Comp"
     elif p1move == 'r' and cmove == 'r':
-        return "tie"
+        return "Tie"
     elif p1move == 's' and cmove == 's':
-        return "tie"
+        return "Tie"
     elif p1move == 'p' and cmove == 'p':
-        return "tie"
+        return "Tie"
     
     
     
@@ -86,6 +86,15 @@ def get_full_move(shortmove):
 #   returns: none
 def print_score(pscore, cscore, tie):
     print ("You have {} points \nThe computer has {} points\nYou guys tied {} times.".format(pscore,cscore, tie))
+    pscore = int(pscore)
+    cscore = int(cscore)
+    tie = int(tie)
+    if pscore > cscore:
+        print ("YOU WIN WITH {} POINTS".format(pscore))
+    elif cscore > pscore:
+        print ("YOU LOSS BY " + (cscore - pscore) + " POINTS!!!")
+    elif cscore == pscore:
+        print ("YOU TIED WITH THE COMPUTER!!!")
 
 # function name: rps
 #   arguments: none
@@ -107,15 +116,16 @@ def rps():
     comp_score = 0
     ties = 0
     rounds = get_rounds()
-    player_1 = get_p1_move()
-    computer_1 = get_comp_move()
-    winner = get_round_winner(player_1,computer_1)
-    print(winner)
-    if winner == "player":
-        player_score = player_score + 1
-    elif winner == "comp":
-        comp_score = comp_score + 1
-    elif winner == "tie":
-        ties = ties + 1
+    for x in range(rounds):
+        player_1 = get_p1_move()
+        computer_1 = get_comp_move()
+        winner = get_round_winner(player_1,computer_1)
+        print(winner)
+        if winner == "Player":
+            player_score = player_score + 1
+        elif winner == "Comp":
+            comp_score = comp_score + 1
+        elif winner == "Tie":
+            ties = ties + 1
     print_score(player_score, comp_score, ties)
 rps()
