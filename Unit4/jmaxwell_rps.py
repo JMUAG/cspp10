@@ -44,19 +44,19 @@ def get_rounds():
 #               "tie" if it's a tie
 def get_round_winner(p1move, cmove):
     if p1move == 'r' and cmove == 's':
-       return "Player"
+       return "Player 1 Wins the Round \n"
     elif p1move == 'p' and cmove == 'r':
-        return "Player"
+        return "Player 1 Wins the Round \n"
     elif p1move == 's' and cmove == 'p':
-        return "Player"
+        return "Player 1 Wins the Round \n"
     elif p1move == 's' and cmove == 'r':
-       return "Comp"
+       return "Computer Wins the Round \n"
     elif p1move == 'r' and cmove == 'p':
-        return "Comp"
+        return "Computer Wins the Round \n"
     elif p1move == 'p' and cmove == 's':
-        return "Comp"
+        return "Computer Wins the Round \n"
     elif p1move == 'r' and cmove == 'r':
-        return "Tie"
+        return "Tis Round Was a tie"
     elif p1move == 's' and cmove == 's':
         return "Tie"
     elif p1move == 'p' and cmove == 'p':
