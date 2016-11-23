@@ -5,7 +5,7 @@ import random
 #   purpose: present player with options, use input() to get player move
 #   returns: the player's move as either 'r', 'p', or 's'
 def get_p1_move():
-    x = input("1 = Rock\n2 = Paper\n3 = Scissors\nEnter a Number from 1-3: ")
+    x = input("\n1 = Rock\n2 = Paper\n3 = Scissors\nEnter a Number from 1-3: ")
     if x == "1":
         return 'r'
     elif x == "2":
@@ -44,24 +44,23 @@ def get_rounds():
 #               "tie" if it's a tie
 def get_round_winner(p1move, cmove):
     if p1move == 'r' and cmove == 's':
-       return "Player 1 Wins the Round \n"
+       return "\nPlayer 1 Wins the Round \n"
     elif p1move == 'p' and cmove == 'r':
-        return "Player 1 Wins the Round \n"
+        return "\nPlayer 1 Wins the Round \n"
     elif p1move == 's' and cmove == 'p':
-        return "Player 1 Wins the Round \n"
+        return "\nPlayer 1 Wins the Round \n"
     elif p1move == 's' and cmove == 'r':
-       return "Computer Wins the Round \n"
+       return "\nComputer Wins the Round \n"
     elif p1move == 'r' and cmove == 'p':
-        return "Computer Wins the Round \n"
+        return "\nComputer Wins the Round \n"
     elif p1move == 'p' and cmove == 's':
-        return "Computer Wins the Round \n"
+        return "\nComputer Wins the Round \n"
     elif p1move == 'r' and cmove == 'r':
-        return "Tis Round Was a tie"
+        return "\nThis Round Was a Tie \n"
     elif p1move == 's' and cmove == 's':
-        return "Tie"
+        return "\nThis Round Was a Tie \n"
     elif p1move == 'p' and cmove == 'p':
-        return "Tie"
-    
+        return "\nThis Round Was a Tie \n"
     
     
 
@@ -89,28 +88,12 @@ def print_score(pscore, cscore, tie):
     pscore = int(pscore)
     cscore = int(cscore)
     tie = int(tie)
-    if pscore > cscore:
-        print ("YOU WIN WITH {} POINTS".format(pscore))
-    elif cscore > pscore:
-        print ("YOU LOSS BY " + (cscore - pscore) + " POINTS!!!")
-    elif cscore == pscore:
-        print ("YOU TIED WITH THE COMPUTER!!!")
 
 # function name: rps
 #   arguments: none
 #   purpose: the main game loop.  This should be the longest, using
 #               all the other functions to create RPS
 # #   returns: none
-# def score():
-#     player_score = 0
-#     comp_score = 0
-#     if get_round_winner() == "player":
-#         player_score = player_score + 1
-#     elif get_round_winner() return "comp":
-#         comp_score = comp_score + 1
-#     else:
-#         return "tie"
-
 def rps():
     player_score = 0
     comp_score = 0
@@ -121,11 +104,25 @@ def rps():
         computer_1 = get_comp_move()
         winner = get_round_winner(player_1,computer_1)
         print(winner)
-        if winner == "Player":
+        if winner == "\nPlayer 1 Wins the Round \n":
             player_score = player_score + 1
-        elif winner == "Comp":
+        elif winner == "\nComputer Wins the Round \n":
             comp_score = comp_score + 1
-        elif winner == "Tie":
+        elif winner == "\nThis Round Was a Tie \n":
             ties = ties + 1
-    print_score(player_score, comp_score, ties)
+        print_score(player_score, comp_score, ties)
+        
+        if player_score > rounds / 2:
+            break
+        elif comp_score > rounds / 2:
+            break
+    
+    if player_score > comp_score:
+        print ("\nYOU WIN WITH {} POINTS".format(player_1))
+    elif comp_score > player_score:
+        print ("\nYOU LOSS BY " + str(comp_score - player_score) + " POINTS!!!")
+    elif comp_score == player_score:
+        print ("\nYOU TIED WITH THE COMPUTER!!!")
+    
+        
 rps()
