@@ -44,37 +44,22 @@ def get_rounds():
 #               "tie" if it's a tie
 def get_round_winner(p1move, cmove):
     if p1move == 'r' and cmove == 's':
-        print ("\n The Computer selected Scissors")
-        print ("\n You Selected Rock")
-        return "\nPlayer 1 Wins the Round \n"
+       return "\nPlayer 1 Wins the Round \n"
     elif p1move == 'p' and cmove == 'r':
-        print ("\n The Computer selected Rock")
-        print ("\n You Selected Paper")
         return "\nPlayer 1 Wins the Round \n"
     elif p1move == 's' and cmove == 'p':
-        print ("\n The Computer selected Paper")
-        print ("\n You Selected Scissors")
         return "\nPlayer 1 Wins the Round \n"
     elif p1move == 's' and cmove == 'r':
-        print ("\n The Computer selected Rock")
-        print ("\n You Selected Scissors")
-        return "\nComputer Wins the Round \n"
+       return "\nComputer Wins the Round \n"
     elif p1move == 'r' and cmove == 'p':
-        print ("\n The Computer selected Paper")
-        print ("\n You Selected Rock")
         return "\nComputer Wins the Round \n"
     elif p1move == 'p' and cmove == 's':
-        print ("\n The Computer selected Scissors")
-        print ("\n You Selected Paper")
         return "\nComputer Wins the Round \n"
     elif p1move == 'r' and cmove == 'r':
-        print ("You both selected Rock")
         return "\nThis Round Was a Tie \n"
     elif p1move == 's' and cmove == 's':
-        print ("You both selected Scissors")
         return "\nThis Round Was a Tie \n"
     elif p1move == 'p' and cmove == 'p':
-        print ("You both selected Paper")
         return "\nThis Round Was a Tie \n"
     
     
@@ -133,9 +118,9 @@ def rps():
             break
     
     if player_score > comp_score:
-        print ("\nYOU WIN WITH {} POINTS".format(player_score))
+        print ("\nYOU WIN WITH {} POINTS".format(player_1))
     elif comp_score > player_score:
-        print ("\nYOU LOSS BY {} POINTS!!!".format(comp_score - player_score))
+        print ("\nYOU LOSS BY " + str(comp_score - player_score) + " POINTS!!!")
     elif comp_score == player_score:
         print ("\nYOU TIED WITH THE COMPUTER!!!")
     

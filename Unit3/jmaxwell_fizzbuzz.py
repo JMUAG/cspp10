@@ -1,5 +1,5 @@
 Swaggy = int(input("Enter a number to start at: "))
-P = int(input("Enter a number to end at: "))
+P = int(input("\nEnter a number to end at: "))
 
 for x in range(Swaggy - 1, P):
     x = x + 1
