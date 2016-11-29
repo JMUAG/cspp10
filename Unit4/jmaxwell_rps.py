@@ -5,7 +5,7 @@ import random
 #   purpose: present player with options, use input() to get player move
 #   returns: the player's move as either 'r', 'p', or 's'
 def get_p1_move():
-    x = input("\n1 = Rock\n2 = Paper\n3 = Scissors\nEnter a Number from 1-3: ")
+    x = input("\n1 = Rock👊\n2 = Paper💸\n3 = Scissors ✂\nEnter a Number from 1-3: ")
     if x == "1":
         return 'r'
     elif x == "2":
@@ -32,7 +32,7 @@ def get_comp_move():
 #   purpose: allows the user to choose a number of rounds from 1 to 9.
 #   returns: the user-chosen number of rounds
 def get_rounds():
-    number_of_rounds = input("How many rounds would you like to play? ")
+    number_of_rounds = input("How many rounds would you like to play💯😇? ")
     return int(number_of_rounds)
 #function name: get_round_winner
 #   arguments: player move, computer move
@@ -44,37 +44,37 @@ def get_rounds():
 #               "tie" if it's a tie
 def get_round_winner(p1move, cmove):
     if p1move == 'r' and cmove == 's':
-        print ("\n The Computer selected Scissors")
-        print ("\n You Selected Rock")
+        print ("\n✂︎ The Computer selected Scissors ✂")
+        print ("\n👊You Selected Rock👊")
         return "\nPlayer 1 Wins the Round \n"
     elif p1move == 'p' and cmove == 'r':
-        print ("\n The Computer selected Rock")
-        print ("\n You Selected Paper")
+        print ("\n👊The Computer selected Rock👊")
+        print ("\n💸You Selected Paper💸")
         return "\nPlayer 1 Wins the Round \n"
     elif p1move == 's' and cmove == 'p':
-        print ("\n The Computer selected Paper")
-        print ("\n You Selected Scissors")
+        print ("\n💸The Computer selected Paper💸")
+        print ("\n✂ You Selected Scissors ✄")
         return "\nPlayer 1 Wins the Round \n"
     elif p1move == 's' and cmove == 'r':
-        print ("\n The Computer selected Rock")
-        print ("\n You Selected Scissors")
+        print ("\n👊The Computer selected Rock👊")
+        print ("\n✂︎ You Selected Scissors ✂︎")
         return "\nComputer Wins the Round \n"
     elif p1move == 'r' and cmove == 'p':
-        print ("\n The Computer selected Paper")
-        print ("\n You Selected Rock")
+        print ("\n💸The Computer selected Paper💸")
+        print ("\n👊You Selected Rock👊")
         return "\nComputer Wins the Round \n"
     elif p1move == 'p' and cmove == 's':
-        print ("\n The Computer selected Scissors")
-        print ("\n You Selected Paper")
+        print ("\n ✂︎ The Computer selected Scissors ✂︎")
+        print ("\n 💸You Selected Paper💸")
         return "\nComputer Wins the Round \n"
     elif p1move == 'r' and cmove == 'r':
-        print ("You both selected Rock")
+        print ("👊You both selected Rock👊")
         return "\nThis Round Was a Tie \n"
     elif p1move == 's' and cmove == 's':
-        print ("You both selected Scissors")
+        print ("✂︎ You both selected Scissors ✂︎")
         return "\nThis Round Was a Tie \n"
     elif p1move == 'p' and cmove == 'p':
-        print ("You both selected Paper")
+        print ("💸You both selected Paper💸")
         return "\nThis Round Was a Tie \n"
     
     
@@ -133,11 +133,11 @@ def rps():
             break
     
     if player_score > comp_score:
-        print ("\nYOU WIN WITH {} POINTS".format(player_score))
+        print ("\nYOU WIN WITH {} POINTS💯👋😍👌".format(player_score))
     elif comp_score > player_score:
-        print ("\nYOU LOSS BY {} POINTS!!!".format(comp_score - player_score))
+        print ("\nYOU LOSS BY {} POINTS!!!😡😓😱😳".format(comp_score - player_score))
     elif comp_score == player_score:
-        print ("\nYOU TIED WITH THE COMPUTER!!!")
+        print ("\nYOU TIED WITH THE COMPUTER!!!😈😔😁😂")
     
         
 rps()
