@@ -5,7 +5,7 @@ import random
 #   purpose: present player with options, use input() to get player move
 #   returns: the player's move as either 'r', 'p', or 's'
 def get_p1_move():
-    x = input("\n1 = Rock👊\n2 = Paper💸\n3 = Scissors🔪 \n\nEnter a Number from 1-3: ")
+    x = input("\n1 = Rock👊\n2 = Paper💸\n3 = Scissors🔪 \nEnter a Number from 1-3: ")
     if x == "1":
         return 'r'
     elif x == "2":
