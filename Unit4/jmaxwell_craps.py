@@ -8,10 +8,6 @@ def amount_of_cash():
     player_cash = 100
     return player_cash
     
-
-    
-
-
 # function name: roll2dice
 #   purpose: generating two random dice rolls and 
 #           prints it out, and returns the sum
@@ -27,17 +23,44 @@ def roll2dice():
 # roll2dice()
 
 # function name: first_roll_result
-#   purpose: get the result of the roll
-#   arguments: roll - the sum of the two dice rolled
+#   purpose: get the result of the first roll
+#   arguments: roll_1 - the sum of the two dice rolled on first round
 #   returns: the result
-#       if roll is 7,11: return "win"
-#       if roll is 2,3,12: return "lose"
-#       if otherwise: return point
-def first_roll_result(roll):
-    if roll == 7 or roll == 11:
+def first_roll_result(roll_1):
+    if roll_1 == 7 or roll_1 == 11:
         return "win"
-    elif roll == 2 or roll == 3 or roll == 12:
+    elif roll_1 == 2 or roll_1 == 3 or roll_1 == 12:
         return "lose"
     else:
-        return "point"
- 
+        return "point" 
+
+# function name: second_roll_result
+#   purpose: get the result of the second roll
+#   arguments: roll_2 - the sum of the two dice rolled on second round
+#   returns: the result of the second roll
+def second_roll_result(roll_2,point):
+    if roll_2 == 7:
+        return "lose"
+    elif roll_2 == point:
+        return "win"
+
+# function name: bet_1
+#   purpose: get the amount of money the player is betting
+#   arguments: cash - the amount fo money being bet
+#   returns: The amount of money the player is betting
+def bet_1(cash):
+    cash = int(input("How Much Money Would You Like to Bet? "))
+    while cash < 101:
+        if cash <= 100:
+            return cash
+        elif cash >= 100:
+            break
+bet_1(cash)       
+# function name: bet_2
+#   purpose: get the amount of money the player is betting after the first round of betting
+#   arguments: cash_2 - the amount of money being bet the second time
+#   returns: The further of money the player is betting until they quit or loose
+def bet_2(cash_2):
+    cash_2 = int(input("How Much Money Would Y"))
+    
+    
