@@ -54,13 +54,31 @@ def bet_1(cash):
         if cash <= 100:
             return cash
         elif cash >= 100:
+            print ("That Is Not A Valid Bet Please Exit")
             break
-bet_1(cash)       
+        
 # function name: bet_2
 #   purpose: get the amount of money the player is betting after the first round of betting
 #   arguments: cash_2 - the amount of money being bet the second time
+#              bank_1 - the amount of money the player has
 #   returns: The further of money the player is betting until they quit or loose
-def bet_2(cash_2):
-    cash_2 = int(input("How Much Money Would Y"))
-    
-    
+def bet_2(cash_2, bank_1):
+    cash_2 = int(input("How Much Money Would You Like to Bet? "))
+    while cash_2 <= bank_1:
+        if cash_2 > bank_1:
+            print ("That Is Not A Valid Bet Please Exit")
+            break
+        elif cash_2 <= bank_1:
+            return cash_2
+            
+# function name: player_bank
+#   purpose: show the amount of money the player has in the game
+#   arguments: guapp - The amount of money the player has at the end of every round
+#   returns: the amount of money the player has
+def print_bank(guapp):
+    print ("You have {} dollars left".format(guapp))
+
+# 
+# 
+# 
+# 
