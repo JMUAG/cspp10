@@ -18,7 +18,7 @@ def roll2dice():
     dice2 = random.randint(1,6)
     dice_sum = dice1 + dice2
     print("Rolled 2 dice: {} {}\n".format(dice1,dice2))
-    print ("This is a {}".format(dice1 + dice2))
+    print ("This is a {}".format(dice_sum))
     return dice_sum
 # roll2dice()
 
@@ -43,6 +43,8 @@ def second_roll_result(roll_2,point):
         return "lose"
     elif roll_2 == point:
         return "win"
+    else:
+        return "roll"
 
 # function name: bet_1
 #   purpose: get the amount of money the player is betting
@@ -78,7 +80,35 @@ def bet_2(cash_2, bank_1):
 def print_bank(guapp):
     print ("You have {} dollars left".format(guapp))
 
-# 
-# 
-# 
-# 
+# function name: quit
+#   purpose: to let the player quit the game when they don't want to play anymore
+#   arguments: exit_key - The key on the key board that lets you exit
+#   returns: either the end of the game or the continuation of the game
+def quit(exit_key):
+    exit_key = input("Would you like to continue [y|n]")
+    exit_key = exit_key.lower()
+    while exit_key == "y" or exit_key == "n":
+        if exit_key == "n":
+            break
+        elif exit_key == "y":
+            return "continue"
+        else:
+            print ("That is Invalid")
+            
+        
+# function name: game_money
+#   purpose: to increase your money 
+#   arguments: round_result - The win or lose of a round
+#              money_player - The amount of money the player has
+#              bet - The amoount of money that was bet by the player
+#   returns: the increase or decrease of your money
+def game_money(round_result,money_player,bet):
+    if round_result == "win":
+        money_player = money_player + bet
+    elif round_result == "lose":
+        money_player = money_player - bet
+
+# function name: 
+#   purpose:
+#   arguments:
+#   returns: 
