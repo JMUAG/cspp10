@@ -108,7 +108,14 @@ def game_money(round_result,money_player,bet):
     elif round_result == "lose":
         money_player = money_player - bet
 
-# function name: 
-#   purpose:
+# function name: craps
+#   purpose: to form all the functions together to create the game
 #   arguments:
-#   returns: 
+#   returns: the game
+def craps():
+    print ("-------------WELCOME TO MY CASINO-------------")
+    player_guap = amount_of_cash()
+    roll = roll2dice()
+    result1 = first_roll_result(roll)
+    result2 = second_roll_result(roll,)
+    
