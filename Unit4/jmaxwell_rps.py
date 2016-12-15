@@ -1,5 +1,4 @@
 import random
-
 #function name: get_p1_move
 #   arguments: none
 #   purpose: present player with options, use input() to get player move

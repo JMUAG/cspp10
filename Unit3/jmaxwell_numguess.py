@@ -1,6 +1,6 @@
+import random
 print ("Welcome to The Number Game 💯😂😂😂💯😁")
 print ("Made by Jahseem Maxwell")
-import random
 correct_random_number = random.randint(1,101)
 number_of_tries = 0
 choice_of_answer = -1

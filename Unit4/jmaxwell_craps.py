@@ -17,8 +17,8 @@ def roll2dice():
     dice1 = random.randint(1,6)
     dice2 = random.randint(1,6)
     dice_sum = dice1 + dice2
-    print("Rolled 2 dice: {} {}\n".format(dice1,dice2))
-    print ("This is a {}".format(dice_sum))
+    print("Rolled 2 dice: {} and a {}\n".format(dice1,dice2))
+    print ("This equals a {}".format(dice_sum))
     return dice_sum
 # roll2dice()
 
@@ -113,9 +113,25 @@ def game_money(round_result,money_player,bet):
 #   arguments:
 #   returns: the game
 def craps():
-    print ("-------------WELCOME TO MY CASINO-------------")
-    player_guap = amount_of_cash()
+    print ("-------------WELCOME TO MY CASINO-------------\n")
+    player_cash = amount_of_cash()
+    point = 0
+    win = 0
+    first_bet = bet_1(player_cash)
     roll = roll2dice()
     result1 = first_roll_result(roll)
-    result2 = second_roll_result(roll,)
+    result2 = second_roll_result(roll,point)
+    while player_cash == 100:
+        if result1 == "point":
+            point = result1
+        elif result1 == "win":
+            player_cash = first_bet + player_cash
+        elif result1 == "lose":
+            player_cash = player_cash - first_bet
     
+        if result2 == "win":
+            player_cash = first_bet + player_cash
+        elif result2 == "lose":
+            player_cash = player_cash - first_bet
+           
+craps()
