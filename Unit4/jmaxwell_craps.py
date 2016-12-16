@@ -121,6 +121,7 @@ def craps():
     roll = roll2dice()
     result1 = first_roll_result(roll)
     result2 = second_roll_result(roll,point)
+    print (first_bet)
     while player_cash == 100:
         if result1 == "point":
             point = result1
