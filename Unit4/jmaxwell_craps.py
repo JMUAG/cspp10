@@ -32,7 +32,7 @@ def first_roll_result(roll_1):
     elif roll_1 == 2 or roll_1 == 3 or roll_1 == 12:
         return "lose"
     else:
-        return "point" 
+        return roll_1 
 
 # function name: second_roll_result
 #   purpose: get the result of the second roll
@@ -44,7 +44,7 @@ def second_roll_result(roll_2,point):
     elif roll_2 == point:
         return "win"
     else:
-        return "roll"
+        return roll_2
 
 # function name: bet_1
 #   purpose: get the amount of money the player is betting
@@ -122,17 +122,16 @@ def craps():
     result1 = first_roll_result(roll)
     result2 = second_roll_result(roll,point)
     print (first_bet)
-    while player_cash == 100:
+    while player_cash >= 1:
         if result1 == "point":
             point = result1
         elif result1 == "win":
             player_cash = first_bet + player_cash
         elif result1 == "lose":
             player_cash = player_cash - first_bet
-    
-        if result2 == "win":
-            player_cash = first_bet + player_cash
-        elif result2 == "lose":
-            player_cash = player_cash - first_bet
+        elif result1 == "win":
+            break
+    print (player_cash)
+                 
            
 craps()
