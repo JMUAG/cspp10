@@ -28,11 +28,11 @@ def roll2dice():
 #   returns: the result
 def first_roll_result(roll_1):
     if roll_1 == 7 or roll_1 == 11:
-        return "win"
+        roll_1 = "win"
     elif roll_1 == 2 or roll_1 == 3 or roll_1 == 12:
-        return "lose"
+        roll_1 =  "lose"
     else:
-        return first_roll_result 
+        return roll_1 
 
 # function name: second_roll_result
 #   purpose: get the result of the second roll
@@ -94,7 +94,19 @@ def quit(exit_key):
             return "continue"
         else:
             print ("That is Invalid")
-            
+
+# function name: point_roll
+#   purpose: to get another roll until you win or lose the round
+#   arguements: result - first roll point number
+#   returns: Win or Lose
+def point_roll(result):
+    dice_2 = random.randint(1,6)
+    dice_3 = random.randint(1,6)
+    roll_sum = dice_2 + dice_3
+    while result != "win" or result != "lose":
+        print("Rolled 2 dice: {} and a {}\n".format(dice_2,dice_3))
+        print ("This equals a {}".format(roll_sum))
+        return roll_sum
         
 # function name: game_money
 #   purpose: to increase your money 
@@ -117,23 +129,21 @@ def craps():
     player_cash = amount_of_cash()
     point = 0
     win = 0
+    second_whatever = 0
     first_bet = bet_1(player_cash)
     roll = roll2dice()
     result1 = first_roll_result(roll)
     result2 = second_roll_result(roll,point)
-    print (first_bet)
-    
+    second_bet = bet_2(second_whatever,player_cash)
+    roll_point = point_roll(roll)
     while player_cash >= 1:
-        if result1 == "point":
-            point = result1
-        elif result1 == "win":
-            player_cash = first_bet + player_cash
-        elif result1 == "lose":
+        print (player_cash)
+        print (first_bet)
+        if roll == "win":
+            player_cash = player_cash + first_bet
+        elif roll == "lose":
             player_cash = player_cash - first_bet
-    
-        if result2 == "win":
-            player_cash = first_bet + player_cash
-        elif result2 == "lose":
-            player_cash = player_cash - first_bet
-           
+        else:
+             print (roll_point)
+        
 craps()
