@@ -52,12 +52,11 @@ def second_roll_result(roll_2,point):
 #   returns: The amount of money the player is betting
 def bet_1(cash):
     cash = int(input("How Much Money Would You Like to Bet? "))
-    while cash < 101:
-        if cash <= 100:
+    while cash > 0:
+        if cash > 0:
             return cash
-        elif cash >= 100:
+        elif cash <= 0:
             print ("That Is Not A Valid Bet Please Exit")
-            break
         
 # function name: bet_2
 #   purpose: get the amount of money the player is betting after the first round of betting
