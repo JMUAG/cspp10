@@ -51,7 +51,6 @@ def second_roll_result(roll_2,point):
 #   arguments: cash - the amount fo money being bet
 #   returns: The amount of money the player is betting
 def bet_1(cash):
-    cash = int(input("How Much Money Would You Like to Bet? "))
     while cash > 0:
         if cash > 0:
             return cash
@@ -64,7 +63,6 @@ def bet_1(cash):
 #              bank_1 - the amount of money the player has
 #   returns: The further of money the player is betting until they quit or loose
 def bet_2(cash_2, bank_1):
-    cash_2 = int(input("How Much Money Would You Like to Bet? "))
     while cash_2 <= bank_1:
         if cash_2 > bank_1:
             print ("That Is Not A Valid Bet Please Exit")
@@ -135,7 +133,7 @@ def craps():
     result2 = second_roll_result(roll,point)
     second_bet = bet_2(second_whatever,player_cash)
     roll_point = point_roll(roll)
-    while player_cash >= 1:
+    while player_cash == 100:
         print (player_cash)
         print (first_bet)
         if roll == "win":
