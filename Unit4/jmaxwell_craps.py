@@ -17,34 +17,41 @@ def roll2dice():
     dice1 = random.randint(1,6)
     dice2 = random.randint(1,6)
     dice_sum = dice1 + dice2
+    if dice_sum == 7 or dice_sum == 11:
+        return "win"
+    elif dice_sum == 2 or dice_sum == 3 or dice_sum == 12:
+        return "lose"
+    else:
+        return dice_sum
     print("Rolled 2 dice: {} and a {}\n".format(dice1,dice2))
     print ("This equals a {}".format(dice_sum))
     return dice_sum
+    
 # roll2dice()
 
-# function name: first_roll_result
-#   purpose: get the result of the first roll
-#   arguments: roll_1 - the sum of the two dice rolled on first round
-#   returns: the result
-def first_roll_result(roll_1):
-    if roll_1 == 7 or roll_1 == 11:
-        roll_1 = "win"
-    elif roll_1 == 2 or roll_1 == 3 or roll_1 == 12:
-        roll_1 =  "lose"
-    else:
-        return roll_1 
+# # function name: first_roll_result
+# #   purpose: get the result of the first roll
+# #   arguments: roll_1 - the sum of the two dice rolled on first round
+# #   returns: the result
+# def first_roll_result(roll_1):
+#     if roll_1 == 7 or roll_1 == 11:
+#         roll_1 = "win"
+#     elif roll_1 == 2 or roll_1 == 3 or roll_1 == 12:
+#         roll_1 =  "lose"
+#     else:
+#         return roll_1 
 
-# function name: second_roll_result
-#   purpose: get the result of the second roll
-#   arguments: roll_2 - the sum of the two dice rolled on second round
-#   returns: the result of the second roll
-def second_roll_result(roll_2,point):
-    if roll_2 == 7:
-        return "lose"
-    elif roll_2 == point:
-        return "win"
-    else:
-        return "roll"
+# # function name: second_roll_result
+# #   purpose: get the result of the second roll
+# #   arguments: roll_2 - the sum of the two dice rolled on second round
+# #   returns: the result of the second roll
+# def second_roll_result(roll_2,point):
+#     if roll_2 == 7:
+#         return "lose"
+#     elif roll_2 == point:
+#         return "win"
+#     else:
+#         return "roll"
 
 # function name: bet_1
 #   purpose: get the amount of money the player is betting
@@ -100,10 +107,15 @@ def point_roll(result):
     dice_2 = random.randint(1,6)
     dice_3 = random.randint(1,6)
     roll_sum = dice_2 + dice_3
-    while result != "win" or result != "lose":
-        print("Rolled 2 dice: {} and a {}\n".format(dice_2,dice_3))
-        print ("This equals a {}".format(roll_sum))
-        return roll_sum
+    if roll_sum == 7:
+        return "lose"
+    elif dice_sum == 2 or dice_sum == 3 or dice_sum == 12:
+        return "lose"
+    else:
+        return dice_sum
+    print("Rolled 2 dice: {} and a {}\n".format(dice1,dice2))
+    print ("This equals a {}".format(dice_sum))
+    return dice_sum
         
 # function name: game_money
 #   purpose: to increase your money 
@@ -129,13 +141,11 @@ def craps():
     second_whatever = 0
     first_bet = bet_1(player_cash)
     roll = roll2dice()
-    result1 = first_roll_result(roll)
-    result2 = second_roll_result(roll,point)
     second_bet = bet_2(second_whatever,player_cash)
     roll_point = point_roll(roll)
-    while player_cash == 100:
-        print (player_cash)
-        print (first_bet)
+    print (player_cash)
+    print (first_bet)
+    while player_cash > 0:
         if roll == "win":
             player_cash = player_cash + first_bet
         elif roll == "lose":
