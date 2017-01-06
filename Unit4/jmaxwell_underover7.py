@@ -1,5 +1,5 @@
 import random
- 
+
 # function for rolling 2 dice
 # name: roll2dice
 # arguments: none
@@ -12,24 +12,25 @@ def roll2dice():
     # get the sum of the two rolls
     dice_sum = dice1 + dice2
     # print the sum
-    print("Rolled 2 dice: {} and a {}\n".format(dice1,dice2))
-    print ("This equals a {}".format(dice_sum))
+    print("Rolled {} and {}, total: {}".format(dice1, dice2, dice_sum))
     # return the sum
     return dice_sum
+
 # function for getting a user's bet
 # name: get_bet
 # arguments: bank - current player balance
 # returns: the bet
 def get_bet(bank):
     # ask the player how much they want to bet
-    player_bet = int(input("How much money would you like to bet? "))
+    bet = int(input("Enter your bet:"))
     # if player's bet is more than they have
     #   available in bank, then get new bet
-    if player_bet > bank:
-        input ("\nThat is an invalid bet.\nHow much money woyud you like to bet? ")
-    # if player's bet is valid, then return the bet
-    elif player_bet <= bank:
-        return player_bet
+    while (bet > bank):
+        bet = int(input("Enter a valid bet: "))
+    # if player's bet is valid, then return
+    #   the bet
+    return bet
+
 # function that finds the range given a dice roll
 # name: get_range
 # arguments: sum of dice
@@ -45,23 +46,64 @@ def get_range(dice_sum):
     elif dice_sum < 7:
         return "under7"
     # if the sum is 7, return "equal7"
-    elif dice_sum == 7:
-        return "equl7"
+    else:
+        return "equal7"
+
 # function for getting the user's choice of range
 # name: choose_range
 # arguments: none
 # returns: player's choice of range
 #       "over7", "under7", or "equal7"
 def choose_range():
-    # present user with choices "over7", "under7", or "equal7"
-    x = input("Pick 1\nover7\nunder7\nequal7\n")
-    x = x.lower()
-    if x == "over7":
-        return "over7"
-    elif x == "under7":
-        return "under7"
-    elif x == "equal7":
-        return "equal7"
+    # present user with choices "over7", "under7",
+    #   or "equal7"
+    print("Choose from the following")
+    print("1. over 7 \n2. under 7 \n3. equal to 7")
     # return their choice
- 
+    choice = input("Choose from [1|2|3]")
+    if choice == "1":
+        return "over7"
+    elif choice == "2":
+        return "under7"
+    else:
+        return "equal7"
+
 # function for the main game
+def overunder7():
+    #initialize the player's bank
+    bank = 100
+    #loop as long as the player has SOME amount of money
+    while bank > 0:
+        #ask for a bet and save it
+        bet = get_bet(bank)
+        #ask for the range and save it
+        user_range = choose_range()
+        #roll 2 dice and save it
+        dice = roll2dice()
+        #figure out the range of the dice and save it
+        round_range = get_range(dice)
+        #check to see if the user won or lost
+        #update their bank accordingly
+        if user_range == round_range: #user won
+            print("You win!")
+            if user_range == "equal7":
+                bank = bank + 4 * bet
+            else:
+                bank = bank + bet
+            
+        else: #user lost
+            print("You lost!")
+            bank = bank - bet
+            
+        #print new bank value
+        print("Your balance is ${}".format(bank))
+        
+        #ask if they want to do another round
+        new_round = input("Do you want to continue? [y|n]").lower()
+        if new_round != "y":
+            break
+    
+    print("Game over, you have ${} in your bank".format(bank))
+    
+    
+overunder7()
