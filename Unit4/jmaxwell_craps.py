@@ -138,7 +138,6 @@ def craps():
     player_cash = amount_of_cash()
     point = 0
     win = 0
-    second_whatever = 0
     first_bet = bet_1(player_cash)
     roll = roll2dice()
     second_bet = bet_2(second_whatever,player_cash)
