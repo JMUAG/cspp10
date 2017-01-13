@@ -1,5 +1,3 @@
-import random
-
 def some_list():
     random_list = []
     while True:

@@ -1,19 +1,18 @@
-import random
-
-def some_list():
-    random_list = []
-    while True:
-        user_input_1 = input("Enter a number, Sum, Clear, Print, Length, or Exit: ")
-        if user_input_1 == "clear" and type(user_input_1) == str:
-            random_list == []
-            print (random_list)
-        elif user_input_1 == "sum" and type(user_input_1) == str:
-            random_list = int(random_list)
-            print (sum(random_list))
-        else:
-            user_input_1 = int(user_input_1)
-            random_list = random_list.append(user_input_1)
-            print (random_list)
-            
-            
-some_list()
+#Working with Johnson
+list_1 = [] 
+while True:
+    user = input("Enter a number, sum , clear , length, exit, print: ").lower()
+    if user == "clear":
+        list_1 = []
+        print (list_1)
+    elif user == "sum":
+        print (sum(list_1))
+    elif user == "length":
+        print (len(list_1))
+    elif user == "exit":
+        break
+    elif user == "print":
+        print (list_1)
+    else:
+        list_1.append(int(user))
+        print (list_1)
