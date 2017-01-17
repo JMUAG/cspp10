@@ -15,4 +15,3 @@ while True:
         print (list_1)
     else:
         list_1.append(int(user))
-        print (list_1)
