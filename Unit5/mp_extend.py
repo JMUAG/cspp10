@@ -1,3 +1,4 @@
+#Working With Johnson
 def extend(original,extension):
     for x in extension:
        original.append(x)
